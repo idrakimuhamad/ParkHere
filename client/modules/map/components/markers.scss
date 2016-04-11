@@ -1,0 +1,19 @@
+$markerWidth: 49px;
+$markerHeight: 64px;
+
+$originX: $markerWidth * .5;
+$originY: $markerHeight;
+
+.marker {
+    transform-origin: $originX $originY;
+    background-image: url('images/marker.svg');
+    position: absolute;
+    cursor: pointer;
+    width: $markerWidth;
+    height: $markerHeight;
+    top: -$originY;
+    left: -$originX;
+    margin: 0;
+    padding: 0;
+    transform: translate3D(0,0,0) scale(0.6);
+}
