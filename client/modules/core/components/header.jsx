@@ -10,7 +10,7 @@ const AppHeader = ({ title, enableLogin}) => {
     return (
         <Fixed top={true} left={true} right={true} zIndex={3}>
             <Toolbar>
-              <NavItem is="a">
+              <NavItem is="a" href="/">
                 ParkHere
               </NavItem>
               <Space

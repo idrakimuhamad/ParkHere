@@ -3,6 +3,9 @@ import {mount} from 'react-mounter';
 
 import MainLayout from './components/main_layout.jsx';
 import Home from './components/home.jsx';
+import Finder from '../map/components/finder.jsx';
+// !!! Need to load the containers instead of the component to get the data !!!!
+import ParkingCluster from '../map/containers/parking_cluster';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -12,6 +15,19 @@ export default function (injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<Home />)
+      });
+    }
+  });
+
+  FlowRouter.route('/find', {
+    name: 'finder',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (
+            <Finder>
+                <ParkingCluster />
+            </Finder>
+        )
       });
     }
   });
